@@ -310,7 +310,6 @@ public class ValidationUtils
     /**
      * @MethodName : verifyLink
      * @Functionality: verify if a url/link is reachable or broken
-     * @author: Kunal Kaviraj
      * @param: FileUrl
      * @return : True -> Link is Broken, False -> Link Works
      */
