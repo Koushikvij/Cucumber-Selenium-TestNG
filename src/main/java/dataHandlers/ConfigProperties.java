@@ -15,12 +15,6 @@ public class ConfigProperties
     private static File Propfile;
     private static Properties prop;
 
-    /**
-     * Constructor to read the properties from properties file.
-     * @Input_Parameters : Source File's absolute path
-     * @Modified_By : Kunal Kaviraj
-     * @Modified_Date : 18/05/23
-     */
     public ConfigProperties(String fileName)
     {
         try
@@ -86,58 +80,6 @@ public class ConfigProperties
      * @param type
      * @return
      */
-    public synchronized static String getURL(String environment, String client, String type)
-    {
-        String returnText = "";
-        String keyValue = "";
-        switch(environment.toLowerCase().trim())
-        {
-            case "sandbox":
-                keyValue = "sandbox_";
-                break;
-            case "demo":
-                keyValue = "demo_";
-                break;
-            case "test":
-                keyValue = "test_";
-                break;
-            case "prod":
-                keyValue = "prod_";
-                break;
-            default:
-                keyValue = "sandbox.";
-                break;
-        }
-        switch(client.toLowerCase().trim())
-        {
-            case "joppa_d2c":
-                keyValue = keyValue + "joppa_d2c_";
-                break;
-            case "hope_d2c":
-                keyValue = keyValue + "hope_d2c_";
-                break;
-            case "hope":
-                keyValue = keyValue +"hope_";
-                break;
-            case "divinity":
-                keyValue = keyValue + "divinity_";
-                break;
-            case "hklaw":
-            	keyValue = keyValue + "hklaw_";
-            	break;
-        }
-        switch(type.toLowerCase().trim())
-        {
-            case "admin":
-                keyValue = keyValue + "adminurl";
-                break;
-            case "member":
-                keyValue = keyValue + "memberlogin";
-                break;
-        }
-        returnText = getPropertyValue(keyValue);
-        return returnText;
-    }
 
     /**
      * Method to set property
